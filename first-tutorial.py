@@ -22,7 +22,7 @@ while(True):
         break
     
 
-
+print("Its done!")
 cap.release()
 cv2.destroyAllWindows()
 
