@@ -1,3 +1,8 @@
+'''
+Here will see how to use shapes features of opencv to be use
+in different application.
+'''
+
 import cv2
 
 
@@ -19,6 +24,7 @@ cv2.rectangle(img, (0,0), (265,185), (0,255,0), 3)
 cv2.imshow('rectangle', img)
 cv2.waitKey(0)
 
+## Putting some text in image
 font = cv2.FONT_HERSHEY_SIMPLEX
 cv2.putText(img, 'House', (130,160) ,font, 0.5, (255,180,0), 1, cv2.LINE_AA )
 cv2.imshow('text', img)
