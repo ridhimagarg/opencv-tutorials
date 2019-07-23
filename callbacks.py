@@ -1,3 +1,8 @@
+'''
+Here will utilize callbacks functionality of opencv to create a small application
+which will crop small part from image and save it.
+'''
+
 import cv2
 
 print(dir(cv2))
