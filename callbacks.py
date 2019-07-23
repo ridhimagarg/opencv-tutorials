@@ -5,8 +5,7 @@ which will crop small part from image and save it.
 
 import cv2
 
-print(dir(cv2))
-
+print("Events related to mouse \n")
 print([i for i in dir(cv2) if 'EVENT' in i])
 
 ## Initializing the coordinates for image to crop
@@ -38,7 +37,9 @@ cv2.setMouseCallback('Cropping', crop_image)
 while(1):
     cv2.imshow('Cropping',image)
     if cv2.waitKey(0) :
+        ## Cropping from original image using the fetched coordinates
         new_img = image[start_y:end_y, start_x:end_x]
+        cv2.imwrite('images/cropped/crop.jpg', new_img)
         cv2.imshow('Cropped',new_img)
         cv2.waitKey(0)
         break
