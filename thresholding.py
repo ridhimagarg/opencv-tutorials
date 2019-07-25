@@ -4,6 +4,11 @@ import matplotlib.pyplot as plt
 
 img = cv2.imread('images/image8.jpg')
 
+## Let's try converting it to grayscale
+## If you want you can try without converting to grayscale
+img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+
 ret1, thresh1 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
 ret2, thresh2 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)
 ret3, thresh3 = cv2.threshold(img, 127, 255, cv2.THRESH_TRUNC)
