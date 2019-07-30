@@ -1,0 +1,24 @@
+{% extends "bootstrap/base.html" %}
+{% block content%}
+
+<style>
+  body {
+	  background: #333333;
+  }
+</style>
+
+<div class="container text-center" style="color: #ffffff; padding: 15px">
+	<p class="lead text-center">Retrieved Information is -:</p>
+
+
+		<!-- For loop logic of jinja template -->
+		{%for i in range(0, len)%} 
+			<p style="text-align: left">{{prediction[i]}}</p> 
+			<br>
+		{%endfor%} 
+		  
+
+</div>
+
+
+{% endblock %}
