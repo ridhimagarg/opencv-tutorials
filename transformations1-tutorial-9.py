@@ -1,5 +1,5 @@
 import cv2
-import numpy as numpy
+import numpy as np
 
 images = ['DL-1.png','DL-2.jpg', 'DL-3.jpg']
 
@@ -19,3 +19,20 @@ for im in images:
 
         cv2.imshow('resized',res)
         cv2.waitKey(0)
+
+img = cv2.imread('images/image8.jpg')
+
+height, width = img.shape[:2]
+
+M = np.float32([[1,0,100],[0,1,50]])
+
+trs = cv2.warpAffine(img, M, (width+100,height+50) )
+
+M = np.float32([[1,0,-50],[0,1,-25]])
+
+trs1 = cv2.warpAffine(trs, M, (width+100+50,height+50+25) )
+
+cv2.imshow('translated',trs1)
+cv2.waitKey(0)
+
+
