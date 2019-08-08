@@ -9,6 +9,8 @@ for im in images:
 
     height, width = img.shape[:2]
 
+    print(height, width)
+
     if height <505 and width <795:
         res = cv2.resize(img, (795, 505), interpolation= cv2.INTER_CUBIC)
 
