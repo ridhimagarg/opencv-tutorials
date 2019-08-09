@@ -35,4 +35,18 @@ trs1 = cv2.warpAffine(trs, M, (width+100+50,height+50+25) )
 cv2.imshow('translated',trs1)
 cv2.waitKey(0)
 
+img = cv2.imread('images/image8.jpg')
 
+height, width, ch = img.shape
+
+pts1 = np.float32([[50,50],[200,50],[50,200]])
+pts2 = np.float32([[10,100],[200,50],[100,250]])
+
+M = cv2.getAffineTransform(pts1, pts2)
+
+trs = cv2.warpAffine(img, M, (width, height))
+
+cv2.imshow('Original',img)
+
+cv2.imshow('Affine Transform',trs)
+cv2.waitKey(0)
