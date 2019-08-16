@@ -11,6 +11,9 @@ Application- joining breaking parts
 Opening - errosion followed by dilation
 
 Closing - dilation followed by erosion
+
+There are some operations available in C++ for image processing. 
+You can refer at - https://in.mathworks.com/help/images/morphological-dilation-and-erosion.html
 '''
 
 import cv2
@@ -19,12 +22,31 @@ import matplotlib.pyplot as plt
 
 img = cv2.imread('./images/morph1.png')
 
-cv2.imshow('image',img)
-cv2.waitKey(0)
-
 kernel = np.ones((5,5), np.uint8)
 ## Performing opening operation to remove small objects from image
 remove_small_objects = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
 
-cv2.imshow('Opening', remove_small_objects)
-cv2.waitKey(0)
+images = [img, remove_small_objects]
+titles = ['Original', 'Small objects removal']
+
+for i in range(2):
+    plt.subplot(1,2,(i+1))
+    plt.imshow(images[i],'gray')
+    plt.xlabel(titles[i])
+
+plt.show()
+
+## Small hole removal using closing operation
+
+img = cv2.imread('./images/morph2.png')
+modify_objects = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
+
+images = [img, modify_objects]
+titles = ['Original', 'Filling small holes']
+
+for i in range(2):
+    plt.subplot(2,2,(i+1))
+    plt.imshow(images[i],'gray')
+    plt.xlabel(titles[i])
+
+plt.show()
