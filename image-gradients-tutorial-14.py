@@ -16,19 +16,31 @@ import cv2
 import numpy as numpy
 import matplotlib.pyplot as plt
 
-img = cv2.imread('images/gradients1.jpg',0)
+img = cv2.imread('images/gradients4.jpg',0)
 
-laplacian = cv2.Laplacian(img,cv2.CV_64F)
+laplacian = cv2.Laplacian(img, cv2.CV_64F)
 sobelx = cv2.Sobel(img, cv2.CV_64F, 1,0, ksize=5)
 sobely = cv2.Sobel(img, cv2.CV_64F, 0,1, ksize=5)
-cv2.imshow("sobelx", sobelx)
-cv2.imshow("sobely", sobelx)
-cv2.imshow("laplacian", laplacian)
-cv2.waitKey(0)
+# cv2.imshow("sobelx", sobelx)
+# cv2.imshow("sobely", sobely)
 
-plt.imshow(sobelx,cmap = 'gray')
-plt.show()
-plt.imshow(sobely,cmap = 'gray')
+# cv2.imshow("Original", img)
+# cv2.waitKey(0)
+
+# cv2.imshow("laplacian", laplacian)
+# cv2.waitKey(0)
+
+# plt.imshow(sobelx,cmap = 'gray')
+# plt.show()
+# plt.imshow(sobely,cmap = 'gray')
+
+images = [img, laplacian, sobelx, sobely]
+titles = ['Original', 'Laplacian', 'SobelX', 'SobelY']
+
+for i in range(4):
+    plt.subplot(2,3,(i+1))
+    plt.imshow(images[i], cmap='gray')
+    plt.title(titles[i])
 
 plt.show()
     
