@@ -24,3 +24,25 @@ I will show you automatic canny edge detector.
 import cv2
 import numpy as np 
 import matplotlib.pyplot as pyplot
+
+img = cv2.imread('images/messi.jpg',0)
+
+def automatic_canny(images, sigma=0.33):
+    median = np.median(images)
+
+    ## Based on some statistics
+    lower = int(max(0, (1-sigma)*median))
+    upper = int(min(255, (1+sigma)*median))
+    edged = cv2.Canny(images, lower, upper)
+
+    cv2.imshow('Edges detected', edged)
+    cv2.waitKey(0)
+
+
+    ## Manually selected values
+    edged = cv2.Canny(images, 100, 200)
+
+    cv2.imshow('Edges detected', edged)
+    cv2.waitKey(0)
+
+automatic_canny(img)
