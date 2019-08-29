@@ -15,6 +15,10 @@ And magnitude using both horiz and vetical  = np.sqrt(Sx**2 + Sy**2)
 Non-max supression -> Basically a first stage filtering for non-edges.
 
 Hystersis thresholding -> Using range for maxval and minval, filter edges and non-edges
+
+Question is how to choose min value and max value.
+
+I will show you automatic canny edge detector.
 '''
 
 import cv2
