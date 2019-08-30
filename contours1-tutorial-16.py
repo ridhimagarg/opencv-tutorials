@@ -11,6 +11,14 @@ import cv2
 import matplotlib.pyplot as pyplot
 import numpy as np
 
-img = cv2.imread('images/gradients.jpg')
+img = cv2.imread('images/gradients3.png')
 
 imgray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+cv2.imshow('gray', imgray)
+cv2.waitKey(0)
+
+image, contours, hierarchy =  cv2.findContours(imgray, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+cv2.imshow('contours',image)
+cv2.waitKey(0)
