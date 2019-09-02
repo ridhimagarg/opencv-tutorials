@@ -14,3 +14,15 @@ cnt = contours[0]
 M = cv2.moments(cnt)
 print(M)
 
+cx = int(M['m01']/M['m00'])
+cy = int(M['m10']/M['m00'])
+
+print(cx, cy)
+
+## Let's use these calculated centroid values
+
+cv2.imshow('Original', img)
+cv2.waitKey(0)
+
+x_axis = cx/2
+y_axis = cy/2
