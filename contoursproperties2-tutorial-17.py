@@ -1,5 +1,5 @@
 import cv2
-import matplotlib.pyplot as pyplot
+import matplotlib.pyplot as plt
 import numpy as np
 
 img = cv2.imread('images/gradients3.png')
@@ -51,3 +51,13 @@ cv2.imshow('new',new_img)
 cv2.waitKey(0)
 
 ## Here we are trying to extract the middle sudoko box but due to uneveness of full image, we are not able to detect the correct box, let's see how to change orientation in order to ger better results.
+
+img = cv2.imread('images/gradients3.png')
+rows,cols,ch = img.shape
+pts1 = np.float32([[56,65],[368,52],[28,387],[389,390]])
+pts2 = np.float32([[0,0],[300,0],[0,300],[300,300]])
+M = cv2.getPerspectiveTransform(pts1,pts2)
+dst = cv2.warpPerspective(img,M,(300,300))
+plt.subplot(121),plt.imshow(img),plt.title('Input')
+plt.subplot(122),plt.imshow(dst),plt.title('Output')
+plt.show()
