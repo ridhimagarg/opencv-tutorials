@@ -9,13 +9,17 @@ img = cv2.imread('images/gradients3.png',0)
 ## Finding the contours
 contours, hierarchy =  cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
+cv2.drawContours(img, contours, -1, (0,255,0), 3)
+
+print(np.array(contours).shape)
+
 cnt = contours[0]
 
 M = cv2.moments(cnt)
 print(M)
 
-cx = int(M['m01']/M['m00'])
-cy = int(M['m10']/M['m00'])
+cx = int(M['m10']/M['m00'])
+cy = int(M['m01']/M['m00'])
 
 print(cx, cy)
 
@@ -26,3 +30,9 @@ cv2.waitKey(0)
 
 x_axis = cx/2
 y_axis = cy/2
+
+# start_x = img.shape
+
+
+# new_img = img[]
+print(img.shape)
