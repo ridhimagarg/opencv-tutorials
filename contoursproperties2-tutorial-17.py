@@ -54,6 +54,8 @@ cv2.waitKey(0)
 
 img = cv2.imread('images/gradients3.png')
 rows,cols,ch = img.shape
+
+## Performing warp perspective transformation.
 pts1 = np.float32([[56,65],[368,52],[28,387],[389,390]])
 pts2 = np.float32([[0,0],[210,0],[0,210],[210,210]])
 M = cv2.getPerspectiveTransform(pts1,pts2)
