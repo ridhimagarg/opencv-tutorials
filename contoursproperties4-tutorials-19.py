@@ -15,3 +15,7 @@ cv2.imshow('Original', img)
 cv2.imshow('Grayed',imgray)
 cv2.waitKey(0)
 
+cnts = cv2.findContours(imgray.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+for (i, c) in enumerate(cnts):
+    print(i,c)
