@@ -80,7 +80,7 @@ cv2.waitKey(0)
 img = cv2.imread('images/contours_tetris_blocks.png')
 imgray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
-thresh = cv2.threshold(imgray, 225, 255, cv2.THRESH_BINARY_INV)
+thresh = cv2.threshold(imgray, 225, 255, cv2.THRESH_BINARY_INV)[1]
 
 cnts, heir = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
@@ -108,69 +108,25 @@ for (i,c) in enumerate(cnts):
     if aspectRatio >= 0.98 and aspectRatio <= 1.02:
         shape = "SQUARE"
 
-    
+    elif aspectRatio >= 3.0:
+        shape = "RECTANGLE"
 
-for (i, c) in enumerate(cnts):
+    elif extent < 0.65:
+        shape = "L-PIECE"
 
+    elif solidity > 0.80:
+        shape = "Z-PIECE"
 
-	# compute the area of the contour along with the bounding box
-	# to compute the aspect ratio
-	area = cv2.contourArea(c)
-	(x, y, w, h) = cv2.boundingRect(c)
- 
-	# compute the aspect ratio of the contour, which is simply the width
-	# divided by the height of the bounding box
-	aspectRatio = w / float(h)
- 
-	# use the area of the contour and the bounding box area to compute
-	# the extent
-	extent = area / float(w * h)
- 
-	# compute the convex hull of the contour, then use the area of the
-	# original contour and the area of the convex hull to compute the
-	# solidity
-	hull = cv2.convexHull(c)
-	hullarea = cv2.contourArea(hull)
-	solidity = area / float(hullarea)
- 
-	# visualize the original contours and the convex hull and initialize
-	# the name of the shape
-	cv2.drawContours(hullimage, [hull], -1, 255, -1)
-	cv2.drawContours(img, [c], -1, (240, 0, 159), 3)
+    cv2.putText(img, shape, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (240, 0, 159), 2)
 
-	#shape = ""
+    print("Contour #{} -- aspect_ratio={:.2f}, extent={:.2f}, solidity={:.2f}" .format(i + 1, aspectRatio, extent, solidity))
 
-    if aspectRatio >= 0.98:
-        shape = "SQUARE"
-
-
-    # if (aspectRatio >= 0.98 and aspectRatio <= 1.02):
-    #     shape = "SQUARE"
-
-    # # if the width is 3x longer than the height, then we have a rectangle
-    # elif aspectRatio >= 3.0:
-    #     shape = "RECTANGLE"
-
-    # # if the extent is sufficiently small, then we have a L-piece
-    # elif extent < 0.65:
-    #     shape = "L-PIECE"
-
-    # # if the solidity is sufficiently large enough, then we have a Z-piece
-    # elif solidity > 0.80:
-    #     shape = "Z-PIECE"
-
-    # # draw the shape name on the image
-    # cv2.putText(image, shape, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5,
-    #     (240, 0, 159), 2)
-
-    # # show the contour properties
-    # print("Contour #{} -- aspect_ratio={:.2f}, extent={:.2f}, solidity={:.2f}"
-    #     .format(i + 1, aspectRatio, extent, solidity))
- 
-# show the output images
 
 cv2.imshow("Convex Hull", hullimage)
 cv2.imshow("Image", img)
 cv2.waitKey(0)
 
+    
+
+    
 
