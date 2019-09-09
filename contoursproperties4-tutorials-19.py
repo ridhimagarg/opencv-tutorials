@@ -126,6 +126,34 @@ cv2.imshow("Convex Hull", hullimage)
 cv2.imshow("Image", img)
 cv2.waitKey(0)
 
+
+##------------------------------Exploring other properties---------------------##
+
+img = cv2.imread('images/contours_tetris_blocks.png')
+imgray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+#mask = np.zeros(imgray.shape, dtype="uint8")
+ret, mask = cv2.threshold(imgray, 10, 255, cv2.THRESH_BINARY)
+min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(imgray, mask=mask)
+
+print(min_val, max_val, min_loc, max_loc)
+
+cnt, heir = cv2.findContours(imgray, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+cnt = np.array(cnt)
+
+leftmost = cnt[cnt[:,:,0].argmin()][0]
+rightmost = cnt[cnt[:,:,0].argmax()][0]
+topmost = cnt[cnt[:,:,1].argmin()][0]
+bottommost = cnt[cnt[:,:,1].argmax()][0]
+
+# print(cnt)
+
+cv2.circle(img, (leftmost[0]), 10, (0,255,0), 3)
+# print(cnt[cnt[:,:,0].argmin()][0])
+
+cv2.imshow('Coo', img)
+
     
 
     
