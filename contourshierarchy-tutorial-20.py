@@ -91,7 +91,13 @@ for (i,c) in enumerate(cnts):
 
     (x, y, w, h) = cv2.boundingRect(c)
 
-    cv2.putText(img, str(i), (x+int(h/2), y + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (240, 0, 159), 2 )
+    print(i, x,y,w,h)
+
+    #print(img.item((x-2),(y18),1))
+    print(hier.shape)
+    print(str(hier[0][i][3] + 1))
+
+    cv2.putText(img, str(i)+ '(' +str(hier[0][i][3] + 1) + ')', (x+int(h/2), y + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (240, 0, 159), 2 )
 
 print(hier)
 
