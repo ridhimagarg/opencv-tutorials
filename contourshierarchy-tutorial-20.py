@@ -19,7 +19,7 @@ for (i,c) in enumerate(cnts):
 
     (x, y, w, h) = cv2.boundingRect(c)
 
-    cv2.putText(img, str(i), (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (240, 0, 159), 2 )
+    cv2.putText(img, str(i), (x+int(h/2), y + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (240, 0, 159), 2 )
 
 print(hier)
 
