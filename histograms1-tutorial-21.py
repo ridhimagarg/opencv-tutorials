@@ -17,3 +17,11 @@ plt.hist(img.ravel(), 256, [0,256])
 
 ## In this picture we have only black and white pixels so 0(black) and 255(white-bright) has high(all) numbers
 plt.show()
+
+hist, bins = np.histogram(img, 256, [0,256])
+
+cdf = hist.cumsum()
+
+cdf_normalized = cdf * hist.max() / cdf.max()
+
+plt.plot(cdf_normalized, color ='b')
