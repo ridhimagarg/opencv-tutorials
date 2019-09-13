@@ -36,5 +36,12 @@ cdf_normalized = cdf * hist.max() / cdf.max()
 equ = cv2.equalizeHist(img)
 cv2.imshow('Equalized',equ)
 
+
+
+
+clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+cl1 = clahe.apply(img)
+
+cv2.imshow('Clahe histo equali', cl1)
 cv2.waitKey(0)
 
