@@ -12,3 +12,16 @@ w, h = template.shape[::-1]
 
 print(w,h)
 
+# All the 6 methods for comparison in a list
+methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR', 'cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
+
+for meth in methods:
+    img = img2.copy()
+    method = eval(meth)
+
+    res = cv2.matchTemplate(img, template, method)
+
+    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
+
+    
+
