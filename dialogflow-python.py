@@ -4,7 +4,7 @@ from google.api_core.exceptions import InvalidArgument
 
 DIALOGFLOW_PROJECT_ID = 'alfred-cqletl'
 DIALOGFLOW_LANGUAGE_CODE = 'en-US'
-GOOGLE_APPLICATION_CREDENTIALS = '1234567abcdef.json'
+GOOGLE_APPLICATION_CREDENTIALS = '8b114614e00f.json'
 SESSION_ID = 'current-user-id'
 text_to_be_analyzed = "Hi"
 session_client = dialogflow.SessionsClient()
