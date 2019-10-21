@@ -1,3 +1,10 @@
+'''
+Template matching for multiple objects, will not occur using minMaxLoc()
+
+In this will use concept of thresholding on the resultant array from template_match function.
+
+'''
+
 import numpy as np 
 import cv2
 import matplotlib.pyplot as plt
@@ -7,14 +14,11 @@ template = cv2.imread('images/mario_coin1.png', 0)
 
 w, h = template.shape[::-1]
 
-new_img = cv2.resize(img, (275, 237))
-
 print(img.shape)
-print(new_img.shape)
 print(template.shape)
 
 res = cv2.matchTemplate(img, template, cv2.TM_CCOEFF_NORMED)
-thresh =0.8
+thresh =0.1
 
 print(res)
 
@@ -25,6 +29,7 @@ print(loc[::-1])
 #print(zip(*loc))
 
 for pt in zip(*loc[::-1]):
+    #print(pt)
     cv2.rectangle(img, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
 
 cv2.imshow('res', img)
