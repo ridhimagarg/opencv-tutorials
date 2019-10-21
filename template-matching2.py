@@ -3,11 +3,30 @@ import cv2
 import matplotlib.pyplot as plt
 
 img = cv2.imread('images/mario.jpg',0 )
-template = cv2.imread('images/mario_coin.jpg', 0)
+template = cv2.imread('images/mario_coin1.png', 0)
+
+w, h = template.shape[::-1]
+
+new_img = cv2.resize(img, (275, 237))
 
 print(img.shape)
+print(new_img.shape)
 print(template.shape)
+
 res = cv2.matchTemplate(img, template, cv2.TM_CCOEFF_NORMED)
 thresh =0.8
 
 print(res)
+
+loc = np.where( res >= thresh)
+
+print(loc)
+print(loc[::-1])
+#print(zip(*loc))
+
+for pt in zip(*loc[::-1]):
+    cv2.rectangle(img, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
+
+cv2.imshow('res', img)
+cv2.waitKey(0)
+#cv2.imwrite('res.png',img_rgb)
