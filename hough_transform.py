@@ -49,3 +49,15 @@ for i in  range(0,lines.shape[0]):
 cv2.imshow('images',img)
 cv2.waitKey(0)
 cv2.imwrite('houghlines.jpg', img)
+
+'''
+Modified version of hough transform is probablistic hough transform, as hough transform does lots of
+computation while this will select random number of lines which is sufficient for line detection.
+
+It takes two more parameters in houghlinesP() function -:
+
+1. minlength => Line shorter than this length will be rejected.
+2. maLineGap => Max gap between two lines in order to treat them as separate line.
+
+
+'''
