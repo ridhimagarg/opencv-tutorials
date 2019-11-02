@@ -12,7 +12,11 @@ import matplotlib.pyplot as plt
 img = cv2.imread('images/mario.jpg',0 )
 template = cv2.imread('images/mario_coin1.png', 0)
 
+template1 = cv2.resize(template, fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
+
 w, h = template.shape[::-1]
+
+w1, h1 = template.shape[::-1]
 
 print(img.shape)
 print(template.shape)
