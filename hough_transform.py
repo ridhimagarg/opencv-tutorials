@@ -61,3 +61,26 @@ It takes two more parameters in houghlinesP() function -:
 
 
 '''
+
+img = cv2.imread('images/gradients4.jpg')
+
+
+
+## Converting to gray scale
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+#gaussian = cv2.GaussianBlur(gray, (3,3), 0)
+
+## Detecting edges
+edges = cv2.Canny(gray, 50, 150, apertureSize= 3)
+
+lines = cv2.HoughLinesP(edges,1,np.pi/180,100,100,10)
+
+# for i in  range(0,lines.shape[0]):
+
+#     rho,theta = lines[i,0]
+for i in  range(0,lines.shape[0]):
+    x1, y1, x2, y2 = lines[i,0]
+    cv2.line(img,(x1,y1),(x2,y2),(0,255,0),2)
+cv2.imshow('images',img)
+cv2.waitKey(0)
