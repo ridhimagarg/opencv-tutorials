@@ -10,4 +10,4 @@ cv2.imshow('image', gray)
 
 cv2.waitKey(0)
 
-
+ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
