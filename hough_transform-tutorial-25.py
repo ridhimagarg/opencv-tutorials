@@ -79,3 +79,42 @@ for i in  range(0,lines.shape[0]):
     cv2.line(img,(x1,y1),(x2,y2),(0,255,0),2)
 cv2.imshow('images',img)
 cv2.waitKey(0)
+
+'''
+Hough circle transform
+
+Equation of a circle -> (x - xcenter)^2 + (y - ycenter)^2
+
+'''
+img = cv2.imread('images/detect_circles.jpg',0)
+
+img = cv2.medianBlur(img, 5)
+
+## Converting to gray scale
+#cimg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+circles = cv2.HoughCircles(img,cv2.HOUGH_GRADIENT,1,20, param1=50,param2=30,minRadius=0,maxRadius=0)
+circles = np.uint16(np.around(circles))
+
+if circles is not None:
+	# convert the (x, y) coordinates and radius of the circles to integers
+	circles = np.round(circles[0, :]).astype("int")
+ 
+	# loop over the (x, y) coordinates and radius of the circles
+	for (x, y, r) in circles:
+		# draw the circle in the output image, then draw a rectangle
+		# corresponding to the center of the circle
+		cv2.circle(img, (x, y), r, (0, 255, 0), 4)
+		cv2.rectangle(img, (x - 5, y - 5), (x + 5, y + 5), (0, 128, 255), -1)
+ 
+	# show the output image
+	cv2.imshow("output", np.hstack([img, img]))
+	cv2.waitKey(0)
+
+
+#cv2.imshow('detected circles',cimg)
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()
+
+
+
