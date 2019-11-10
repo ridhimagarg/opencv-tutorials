@@ -36,4 +36,16 @@ unknown = np.subtract(sure_bg, sure_fg)
 
 cv2.imshow('unknown', unknown)
 
+ret, markers = cv2.connectedComponents(sure_fg)
+
+#cv2.imshow('markers', markers)
+
+print(markers)
+
+markers = markers +1
+
+markers[unknown == 255] = 0
+
+#cv2.imshow('markers2', markers)
+
 cv2.waitKey(0)
