@@ -1,3 +1,21 @@
+'''
+Application - extracting the foreground
+by making background black.
+
+How it works -:
+
+- Initial a rectangle pixels is given by user and 
+everything outside that rectangle is background and
+everything inside it is considered as unknown.
+
+- Using GMM, will decide this pizel comes in foreground
+or background.
+
+- 
+
+
+'''
+
 import cv2
 import numpy as np 
 
