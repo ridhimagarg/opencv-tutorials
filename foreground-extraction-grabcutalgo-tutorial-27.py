@@ -11,7 +11,16 @@ everything inside it is considered as unknown.
 - Using GMM, will decide this pizel comes in foreground
 or background.
 
-- 
+- Now create two new nodes, source and sink.
+Foreground nodes are connected to souce node.
+Background nodes are connecred to sink node.
+
+- These edges contains weights depends upon the pixel similarity.
+
+- And iterate and find out if this pixe should belong to source or sink node.
+
+- Finally mincut algorithm is used to cut the graph into 
+two separating nodes -: sink and source based on mimimum cost(distance).
 
 
 '''
