@@ -1,3 +1,18 @@
+'''
+Application - Image segmentation basically is one of the application of 
+this algorithm.
+
+Due to noise and irregularities, we don't apply directly the watershed.
+
+Steps:
+We will try to find the sure background and sure foreground.
+
+
+- 
+
+
+'''
+
 import cv2
 import numpy as np 
 
