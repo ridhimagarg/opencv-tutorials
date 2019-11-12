@@ -6,9 +6,17 @@ Due to noise and irregularities, we don't apply directly the watershed.
 
 Steps:
 We will try to find the sure background and sure foreground.
+and mark the unknown area as the marker for watershed.
 
+- Using dilation, will find out the sure background as it will make edges wider,
+using opening, will do dilation.
 
-- 
+- For sure foreground, we are using distance transform. 
+Distance transform helps in detecting the distance from the defined edge,
+here edge is the boundary.
+
+- Then on the unkown area will apply the watershed algo.
+
 
 
 '''
