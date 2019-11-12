@@ -32,6 +32,7 @@ img = cv2.imread('images/messi.jpg')
 
 mask = np.zeros(img.shape[:2], np.uint8)
 
+## Creating simple bg and fg model.
 bgdModel = np.zeros((1,65), np.float64)
 fgdModel = np.zeros((1,65), np.float64)
 
@@ -44,9 +45,12 @@ cv2.imshow('images', img)
 cv2.imshow('mask', mask)
 cv2.waitKey(0)
 
+## Making mask =2 and mask =0 as background and 1 and 3 as foreground.
 mask2 = np.where((mask ==2) | (mask== 0), 0, 1).astype('uint8')
 
+## Mapping this new mask to image
 img = img * mask2[:,:,np.newaxis]
 
+## Displaying image
 cv2.imshow('final', img)
 cv2.waitKey(0)
