@@ -8,4 +8,4 @@ We can draw different type of shapes like line, circle, eclipse, etc using openc
 
 - cv2.line()
   
-<img src='https://github.com/ridhimagarg/opencv-tutorials/tree/master/images/readme/img1.PNG'>
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img1.PNG'>
