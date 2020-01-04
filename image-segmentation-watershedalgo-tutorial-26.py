@@ -35,6 +35,16 @@ cv2.imshow('image', gray)
 ## Applying dilation for sure_bg detection
 ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
 
+cnts, heir = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+img2 = img.copy()
+
+cv2.drawContours(img2,cnts,-1,(0,255,0),3)
+
+cv2.imshow('contour', img2)
+
+cv2.waitKey(0)
+
 kernel = np.ones((3,3), np.uint8)
 
 opening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=2)

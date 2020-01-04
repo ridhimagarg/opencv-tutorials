@@ -1,0 +1,19 @@
+name: John
+surname: 'Doe'
+company: 'Municipality'
+email: john@doe.com
+
+name: John2
+surname: 'Doe2'
+company: 'Municipality2'
+email: john2@doe2.com
+
+name: John3
+surname: 'Doe3'
+company: 'Municipality3'
+email: john3@doe3.com
+
+name: John4
+surname: 'Doe4'
+company: 'Municipality4'
+email: john4@doe4.com
