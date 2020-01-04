@@ -13,3 +13,14 @@ We can draw different type of shapes like line, circle, eclipse, etc using openc
 - cv2.rectangle()
 
 <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img2.PNG'>
+
+## 03. callbacks-tutorial.py
+
+Using callbacks, we can perform defined operations like cropping image etc. We can define mouse callback.
+
+- cv2.setMouseCallback()
+
+
+
+
+
