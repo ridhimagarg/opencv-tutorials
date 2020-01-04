@@ -5,12 +5,15 @@ in different application.
 
 import cv2
 
-
+## reading image
 img = cv2.imread('images/image8.jpg')
+
+## Displaying the read image
 cv2.imshow('hello', img)
 cv2.waitKey(0)
 
 ## Using lines drawing a simple 3-sided boundary
+## drawing line on different coordinates
 cv2.line(img, (0,0), (265,0),(255,0,0), 5 )
 cv2.line(img, (265,0), (265, 265), (255,0,0), 5)
 cv2.line(img, (0,185), (265,185), (255,0,0), 5)
