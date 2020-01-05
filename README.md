@@ -20,6 +20,10 @@ Using callbacks, we can perform defined operations like cropping image etc. We c
 
 - cv2.setMouseCallback()
 
+## 04. bitwise-op-tutorial.py
+
+Using bitwise or, and will manipulate image to find out the mask and its mask inverse etc.
+
 <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img4.PNG'>
 
 
