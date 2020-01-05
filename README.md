@@ -31,7 +31,7 @@ Using bitwise or, and will manipulate image to find out the mask and its mask in
 - cvtColor() - converting from bgr to hsv, vice-versa etc.
 - inRange() 
 
-<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img4.PNG'> | <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img4.PNG'>
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img5.PNG'> | <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img6.PNG'>
 
 
 
