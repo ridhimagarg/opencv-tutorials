@@ -20,6 +20,7 @@ Using callbacks, we can perform defined operations like cropping image etc. We c
 
 - cv2.setMouseCallback()
 
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img4.PNG'>
 
 
 
