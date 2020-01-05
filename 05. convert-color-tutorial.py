@@ -1,3 +1,8 @@
+'''
+How to convert color of image in opencv and finding out the region of particular color only
+
+'''
+
 import cv2
 import numpy as np
 
@@ -26,11 +31,11 @@ cv2.waitKey(0)
 ## Now performing "and" operation to get the blue color only.  
 res = cv2.bitwise_and(img,img, mask=mask)
 
-cv2.imshow("res",res)
+cv2.imshow("Only blue",res)
 cv2.waitKey(0)
 
 ## Here we are trying to convert the background from black to white
 ## mask ==0 means black pixels wherever mask value is 0 will replace with white
 res[mask == 0] = (255, 255, 255)
-cv2.imshow("res",res)
+cv2.imshow("Convert black to white",res)
 cv2.waitKey(0)
