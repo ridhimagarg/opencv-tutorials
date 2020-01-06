@@ -33,6 +33,13 @@ Using bitwise or, and will manipulate image to find out the mask and its mask in
 
 <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img5.PNG'> | <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img6.PNG'> | <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img7.PNG'>
 
+## 06. thresholding-tutorial.py
+
+cv2.THRESH_BINARY, cv2.THRESH_BINARY_INV - a lot more thresholding types
+
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img8.PNG'> 
+
+
 
 
 
