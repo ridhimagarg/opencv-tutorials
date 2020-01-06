@@ -37,7 +37,7 @@ Using bitwise or, and will manipulate image to find out the mask and its mask in
 
 cv2.THRESH_BINARY, cv2.THRESH_BINARY_INV - a lot more thresholding types
 
-<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img8.PNG'> 
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img8.png'> 
 
 
 
