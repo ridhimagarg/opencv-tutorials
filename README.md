@@ -45,6 +45,11 @@ cv2.adaptiveThreshold() - How it uses binary thresholding as well to make thresh
 
 <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img9.png'> 
 
+## 08. ostu-thresholding-tutorial.py
+
+cv2.THRESH_OTSU - Performs ostu thresholding
+
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img10.png'> 
 
 
 
