@@ -39,6 +39,15 @@ cv2.THRESH_BINARY, cv2.THRESH_BINARY_INV - a lot more thresholding types
 
 <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img8.png'> 
 
+## 07. adaptive-thresholding-tutorial.py
+
+cv2.adaptiveThreshold() - How it uses binary thresholding as well to make thresholding more clear and abstract.
+
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img9.png'> 
+
+
+
+
 
 
 
