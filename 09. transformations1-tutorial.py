@@ -60,6 +60,7 @@ img = cv2.imread('images/image8.jpg')
 
 height, width, ch = img.shape
 
+## You need to play with these points in order to get proper shifting according to your requirement.
 pts1 = np.float32([[50,50],[200,50],[50,200]])
 pts2 = np.float32([[10,100],[200,50],[100,250]])
 
