@@ -67,8 +67,8 @@ Smoothing is for removing noise from image and making an image less pixelated.
 
 cv2.blur, cv2.GaussianBlur, cv2.MedianBlur - some of the blurring techniques
 
-<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img14.PNG'>
-<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img15.PNG'> 
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img14.png'>
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img15.png'> 
 
 
 
