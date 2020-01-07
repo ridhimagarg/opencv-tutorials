@@ -77,8 +77,8 @@ Morphological operations basic one - erosion and dilation
 <b> Erosion</b> -: Removing pixels from image
 <b> Dilation </b> -: Adding pixels to image, basically expand the image.
 
-<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img16.png'>
-<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img17.png'> 
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img16.PNG'>
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img17.PNG'> 
 
 
 
