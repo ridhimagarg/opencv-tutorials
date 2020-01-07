@@ -70,6 +70,17 @@ cv2.blur, cv2.GaussianBlur, cv2.MedianBlur - some of the blurring techniques
 <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img14.png'>
 <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img15.png'> 
 
+## 12. morphological-1-tutorial.py
+
+Morphological operations basic one - erosion and dilation
+
+<b> Erosion</b> -: Removing pixels from image
+<b> Dilation </b> -: Adding pixels to image, basically expand the image.
+
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img16.PNG'>
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img17.PNG'> 
+
+
 
 
 
