@@ -51,6 +51,14 @@ cv2.THRESH_OTSU - Performs ostu thresholding
 
 <img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img10.png'> 
 
+## 09. transformations1-tutorial.py
+
+Transformation could be resizing, plane wise transforming shifting image.
+
+cv2.warpAffine - Simple shifting in x and y direction, cv2.getAffineTransform - Performing shifting in all direction i.e, x,y,z .
+
+<img src='https://github.com/ridhimagarg/opencv-tutorials/blob/master/images/readme/img11.PNG'> 
+
 
 
 
