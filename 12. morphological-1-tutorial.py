@@ -24,6 +24,7 @@ import matplotlib.pyplot as plt
 
 img = cv2.imread('./images/morph1.png')
 
+## Structing element - it is of odd size like (3,3) , (7,7) etc.
 kernel = np.ones((5,5), np.uint8)
 
 ## Performing opening operation to remove small objects from image
